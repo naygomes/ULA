@@ -1,0 +1,17 @@
+library ieee;
+use IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY comparador IS
+PORT ( 
+	a					: in std_logic_vector(3 downto 0);
+	b					: in std_logic_vector(3 downto 0);
+	saidaComparador: out std_logic;
+);
+END comparador;
+
+
+ARCHITECTURE functionSomador OF comparador IS
+
+BEGIN
+	
+END functionSomador;

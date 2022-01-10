@@ -1,0 +1,37 @@
+library ieee;
+use IEEE.STD_LOGIC_1164.ALL;0
+
+ENTITY somador IS
+PORT(
+a: in std_logic;
+b: in std_logic;
+cin: in std_logic;
+s: out std_logic
+);
+
+ENTITY ula IS
+PORT ( 
+selecao1: in std_logic;
+selecao2: in std_logic;
+selecao3: in std_logic;
+num1	  : in std_logic_vector(3 downto 0);
+num2	  : in std_logic_vector(3 downto 0);
+carry0  : in std_logic;
+saida	  : out std_logic_vector(3 downto 0);
+flag_carry	: out std_logic;
+flag_zero	: out std_logic
+
+);
+END ula;
+
+
+
+ARCHITECTURE teste OF ula IS
+
+signal s		: std_logic_vector(3 downto 0);
+signal carry_out: std_logic;
+
+BEGIN
+			s <= num1 XNOR num2 XNOR carry0 ;
+			carry_out <= (num1 AND num2) OR (carry0 AND num1) OR (carry0 AND num2);
+END teste;

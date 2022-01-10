@@ -1,0 +1,54 @@
+library ieee;
+use IEEE.STD_LOGIC_1164.ALL;0
+
+ENTITY somador IS
+PORT ( 
+	a: in std_logic;
+	b: in std_logic;
+	cin: in std_logic;
+	saidaComponente: out std_logic;
+	cout: OUT std_logic
+	);
+);
+END somador;
+
+
+ARCHITECTURE function OF somador IS
+
+	COMPONENT somador
+
+	PORT(
+	a: in std_logic;
+	b: in std_logic;
+	cin: in std_logic;
+	saidaComponente: out std_logic;
+	cout: OUT std_logic
+	);
+
+	END COMPONENT;
+
+signal c: bit_vector(3 downto 1); 
+signal s: std_logic_vector(3 downto 0);
+signal carry_out: std_logic;
+
+BEGIN
+
+	variable selector: std_logic(2 downto 0);
+
+	selector := selecao1 & selecao2 & selecao3;
+
+	CASE selector IS
+		WHEN "000" =>
+			x0: somador PORT MAP(a(0), b(0), cin, saidaComponente(0), c(1));
+			x1: somador PORT MAP(a(1), b(1), c(1), saidaComponente(1), c(2));
+			x2: somador PORT MAP(a(2), b(2), c(2), saidaComponente(2), c(3));
+			x3: somador PORT MAP(a(3), b(3), c(3), saidaComponente(3), cout);
+		WHEN "001" =>
+		WHEN "010" =>
+		WHEN "011" =>
+		WHEN "100" =>
+		WHEN "101" =>
+		WHEN "110" =>
+		WHEN "111" =>
+		
+END function;
