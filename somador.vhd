@@ -17,7 +17,7 @@ ARCHITECTURE functionSomador OF somador IS
 
 BEGIN
 	-- Definindo qual é a saída da soma
-	saidaComponente <= a XNOR b XNOR cin;
+	saidaComponente <= a XOR b XOR cin;
 	
 	-- Definindo o carry out da soma;
 	cout <= (a AND b) OR (cin AND a) OR (cin AND b);

@@ -162,7 +162,7 @@ BEGIN
 	flag_carry <= '1' WHEN carry_out = '1' ELSE '0';
 	
 	-- Definindo flag Overflow --> (Se tiver overflow, retorna 1. Se não, 0)
-	flag_overflow <= '1' WHEN (num1(3) = '0' AND num2(3) = '0' AND s(3) = '1') OR (num1(3) = '1' AND num2(3) = '1' AND s(3) = '1') ELSE '0';
+	flag_overflow <= '1' WHEN (num1(3) = '0' AND num2(3) = '0' AND s(3) = '1') OR (num1(3) = '1' AND num2(3) = '1' AND s(3) = '0') ELSE '0';
 
 	-- Definindo flag Negativo --> (Se a saída for um número negativo, retorna 1. Se não, 0)
 	flag_negativo <= '1' WHEN s(3) = '1' ELSE '0';

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ula
-Sun Jan 09 23:39:50 2022
+Mon Jan 10 12:58:03 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -53,13 +53,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jan 09 23:39:50 2022       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 10 12:58:03 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; ula                                         ;
 ; Top-level Entity Name              ; ula                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 57                                          ;
-;     Total combinational functions  ; 57                                          ;
+; Total logic elements               ; 53                                          ;
+;     Total combinational functions  ; 53                                          ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
 ; Total pins                         ; 20                                          ;
@@ -184,36 +184,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+--------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 57             ;
-;                                             ;                ;
-; Total combinational functions               ; 57             ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 33             ;
-;     -- 3 input functions                    ; 18             ;
-;     -- <=2 input functions                  ; 6              ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 57             ;
-;     -- arithmetic mode                      ; 0              ;
-;                                             ;                ;
-; Total registers                             ; 0              ;
-;     -- Dedicated logic registers            ; 0              ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 20             ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; selecao3~input ;
-; Maximum fan-out                             ; 16             ;
-; Total fan-out                               ; 226            ;
-; Average fan-out                             ; 2.33           ;
-+---------------------------------------------+----------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 53            ;
+;                                             ;               ;
+; Total combinational functions               ; 53            ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 35            ;
+;     -- 3 input functions                    ; 14            ;
+;     -- <=2 input functions                  ; 4             ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 53            ;
+;     -- arithmetic mode                      ; 0             ;
+;                                             ;               ;
+; Total registers                             ; 0             ;
+;     -- Dedicated logic registers            ; 0             ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 20            ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; num1[0]~input ;
+; Maximum fan-out                             ; 14            ;
+; Total fan-out                               ; 218           ;
+; Average fan-out                             ; 2.34          ;
++---------------------------------------------+---------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -221,25 +221,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+----------------+--------------+
-; |ula                       ; 57 (36)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |ula                                 ; ula            ; work         ;
+; |ula                       ; 53 (34)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |ula                                 ; ula            ; work         ;
 ;    |comparador:compara1|   ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|comparador:compara1             ; comparador     ; work         ;
-;    |complementoDe2:comp0|  ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp0            ; complementoDe2 ; work         ;
-;       |somador:s0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp0|somador:s0 ; somador        ; work         ;
+;    |complementoDe2:comp0|  ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp0            ; complementoDe2 ; work         ;
+;       |somador:s0|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp0|somador:s0 ; somador        ; work         ;
 ;       |somador:s1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp0|somador:s1 ; somador        ; work         ;
-;       |somador:s2|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp0|somador:s2 ; somador        ; work         ;
-;       |somador:s3|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp0|somador:s3 ; somador        ; work         ;
+;       |somador:s2|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp0|somador:s2 ; somador        ; work         ;
 ;    |complementoDe2:comp1|  ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp1            ; complementoDe2 ; work         ;
 ;       |somador:s1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp1|somador:s1 ; somador        ; work         ;
 ;       |somador:s2|         ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|complementoDe2:comp1|somador:s2 ; somador        ; work         ;
 ;    |somador:i1|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:i1                      ; somador        ; work         ;
-;    |somador:i3|            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:i3                      ; somador        ; work         ;
 ;    |somador:soma0|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:soma0                   ; somador        ; work         ;
 ;    |somador:soma1|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:soma1                   ; somador        ; work         ;
-;    |somador:soma3|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:soma3                   ; somador        ; work         ;
+;    |somador:soma2|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:soma2                   ; somador        ; work         ;
 ;    |somador:sub0|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:sub0                    ; somador        ; work         ;
 ;    |somador:sub1|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:sub1                    ; somador        ; work         ;
-;    |somador:sub2|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:sub2                    ; somador        ; work         ;
-;    |somador:sub3|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:sub3                    ; somador        ; work         ;
+;    |somador:sub2|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula|somador:sub2                    ; somador        ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -357,14 +354,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 20                          ;
-; cycloneiii_lcell_comb ; 57                          ;
-;     normal            ; 57                          ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 18                          ;
-;         4 data inputs ; 33                          ;
+; cycloneiii_lcell_comb ; 54                          ;
+;     normal            ; 54                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 35                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 5.96                        ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 6.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -383,7 +381,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Jan 09 23:39:40 2022
+    Info: Processing started: Mon Jan 10 12:57:53 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ula -c ula
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -423,14 +421,14 @@ Warning (13012): Latch carry_out has unsafe behavior File: C:/VHDL/ULA/ula.vhd L
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 77 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 73 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 57 logic cells
+    Info (21061): Implemented 53 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4786 megabytes
-    Info: Processing ended: Sun Jan 09 23:39:50 2022
+    Info: Peak virtual memory: 4780 megabytes
+    Info: Processing ended: Mon Jan 10 12:58:03 2022
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Total CPU time (on all processors): 00:00:24
 
 
