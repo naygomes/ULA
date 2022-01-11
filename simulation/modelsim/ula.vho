@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "01/11/2022 00:01:53"
+-- DATE "01/11/2022 00:42:12"
 
 -- 
 -- Device: Altera EP4CE6E22C6 Package TQFP144

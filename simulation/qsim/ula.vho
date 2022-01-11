@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
--- DATE "01/11/2022 00:04:55"
+-- DATE "01/11/2022 00:42:31"
 
 -- 
 -- Device: Altera EP4CE6E22C6 Package TQFP144
@@ -316,16 +316,16 @@ SIGNAL \Mux25~9_combout\ : std_logic;
 SIGNAL \carry_out~combout\ : std_logic;
 SIGNAL \Equal0~0_combout\ : std_logic;
 SIGNAL \flag_overflow~0_combout\ : std_logic;
+SIGNAL \ALT_INV_Mux16~0_combout\ : std_logic;
+SIGNAL \ALT_INV_Mux6~0_combout\ : std_logic;
+SIGNAL \ALT_INV_Mux8~0_combout\ : std_logic;
+SIGNAL \ALT_INV_Mux9~0_combout\ : std_logic;
 SIGNAL \ALT_INV_flag_overflow~0_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux20~0_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux22~0_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux23~0_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux13~0_combout\ : std_logic;
 SIGNAL \ALT_INV_Mux15~0_combout\ : std_logic;
-SIGNAL \ALT_INV_Mux16~0_combout\ : std_logic;
-SIGNAL \ALT_INV_Mux6~0_combout\ : std_logic;
-SIGNAL \ALT_INV_Mux8~0_combout\ : std_logic;
-SIGNAL \ALT_INV_Mux9~0_combout\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -355,16 +355,16 @@ flag_negativo <= ww_flag_negativo;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
+\ALT_INV_Mux16~0_combout\ <= NOT \Mux16~0_combout\;
+\ALT_INV_Mux6~0_combout\ <= NOT \Mux6~0_combout\;
+\ALT_INV_Mux8~0_combout\ <= NOT \Mux8~0_combout\;
+\ALT_INV_Mux9~0_combout\ <= NOT \Mux9~0_combout\;
 \ALT_INV_flag_overflow~0_combout\ <= NOT \flag_overflow~0_combout\;
 \ALT_INV_Mux20~0_combout\ <= NOT \Mux20~0_combout\;
 \ALT_INV_Mux22~0_combout\ <= NOT \Mux22~0_combout\;
 \ALT_INV_Mux23~0_combout\ <= NOT \Mux23~0_combout\;
 \ALT_INV_Mux13~0_combout\ <= NOT \Mux13~0_combout\;
 \ALT_INV_Mux15~0_combout\ <= NOT \Mux15~0_combout\;
-\ALT_INV_Mux16~0_combout\ <= NOT \Mux16~0_combout\;
-\ALT_INV_Mux6~0_combout\ <= NOT \Mux6~0_combout\;
-\ALT_INV_Mux8~0_combout\ <= NOT \Mux8~0_combout\;
-\ALT_INV_Mux9~0_combout\ <= NOT \Mux9~0_combout\;
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,

@@ -3,14 +3,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Definindo entidade da ULA
 ENTITY ula IS
-PORT ( 
+PORT (
+-- Seletores
 selecao1		  : in std_logic;
 selecao2		  : in std_logic;
 selecao3		  : in std_logic;
+
+-- Entradas em binário
 num1	  		  : in std_logic_vector(3 downto 0);
 num2	  		  : in std_logic_vector(3 downto 0);
+
+-- Saída em binário
 saida_bin  	  : out std_logic_vector(3 downto 0);
 
+-- Saída dos valores de num1, num2, saída_bin e seus respectivos sinais em 7 segmentos
 seg7_num1     : out std_logic_vector(6 downto 0);
 seg7_num1_s	  : out std_logic_vector(6 downto 0);
 seg7_num2	  : out std_logic_vector(6 downto 0);
@@ -18,6 +24,7 @@ seg7_num2_s	  : out std_logic_vector(6 downto 0);
 seg7_saida	  : out std_logic_vector(6 downto 0);
 seg7_s    	  : out std_logic_vector(6 downto 0);
 
+-- Flags
 flag_carry	  : out std_logic;
 flag_zero	  : out std_logic;
 flag_overflow : out std_logic;

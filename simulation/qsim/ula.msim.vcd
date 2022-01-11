@@ -3,7 +3,7 @@ $comment
 		vcd file ula.msim.vcd -direction
 $end
 $date
-	Tue Jan 11 00:04:57 2022
+	Tue Jan 11 00:42:33 2022
 $end
 $version
 	ModelSim Version 2020.1
@@ -276,16 +276,16 @@ $var wire 1 f" \Mux25~9_combout\ $end
 $var wire 1 g" \carry_out~combout\ $end
 $var wire 1 h" \Equal0~0_combout\ $end
 $var wire 1 i" \flag_overflow~0_combout\ $end
-$var wire 1 j" \ALT_INV_flag_overflow~0_combout\ $end
-$var wire 1 k" \ALT_INV_Mux20~0_combout\ $end
-$var wire 1 l" \ALT_INV_Mux22~0_combout\ $end
-$var wire 1 m" \ALT_INV_Mux23~0_combout\ $end
-$var wire 1 n" \ALT_INV_Mux13~0_combout\ $end
-$var wire 1 o" \ALT_INV_Mux15~0_combout\ $end
-$var wire 1 p" \ALT_INV_Mux16~0_combout\ $end
-$var wire 1 q" \ALT_INV_Mux6~0_combout\ $end
-$var wire 1 r" \ALT_INV_Mux8~0_combout\ $end
-$var wire 1 s" \ALT_INV_Mux9~0_combout\ $end
+$var wire 1 j" \ALT_INV_Mux16~0_combout\ $end
+$var wire 1 k" \ALT_INV_Mux6~0_combout\ $end
+$var wire 1 l" \ALT_INV_Mux8~0_combout\ $end
+$var wire 1 m" \ALT_INV_Mux9~0_combout\ $end
+$var wire 1 n" \ALT_INV_flag_overflow~0_combout\ $end
+$var wire 1 o" \ALT_INV_Mux20~0_combout\ $end
+$var wire 1 p" \ALT_INV_Mux22~0_combout\ $end
+$var wire 1 q" \ALT_INV_Mux23~0_combout\ $end
+$var wire 1 r" \ALT_INV_Mux13~0_combout\ $end
+$var wire 1 s" \ALT_INV_Mux15~0_combout\ $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -448,11 +448,11 @@ xg"
 1k"
 0l"
 0m"
-1n"
-0o"
+0n"
+1o"
 0p"
-1q"
-0r"
+0q"
+1r"
 0s"
 1%
 1&
@@ -580,7 +580,7 @@ $end
 1K"
 0M"
 0a"
-1s"
+1m"
 0@"
 0>"
 0B"
@@ -623,8 +623,8 @@ $end
 0Q"
 1R"
 0T"
-1o"
-1p"
+1s"
+1j"
 0^"
 1B"
 10"
@@ -659,7 +659,7 @@ $end
 0`"
 0c"
 0i"
-1j"
+1n"
 0b"
 0-"
 0Q!
@@ -667,8 +667,8 @@ $end
 1Z"
 0f"
 0%!
-0k"
-1l"
+0o"
+1p"
 0>
 1v!
 0F!
@@ -700,7 +700,7 @@ $end
 18"
 1="
 0J"
-1r"
+1l"
 1>"
 1^"
 1B"
@@ -713,9 +713,9 @@ $end
 0Y"
 0Z"
 0\"
-1k"
-0l"
-1m"
+1o"
+0p"
+1q"
 1L!
 1b"
 0G!
@@ -759,9 +759,9 @@ $end
 0`"
 1c"
 1i"
-0j"
 0n"
-0p"
+0r"
+0j"
 0b"
 0+"
 1_!
@@ -805,7 +805,7 @@ $end
 0E"
 1^"
 1`"
-0r"
+0l"
 1b"
 1-"
 0>"
@@ -817,7 +817,7 @@ $end
 0P!
 1O!
 0M!
-0m"
+0q"
 1>
 0L!
 0v
@@ -852,8 +852,8 @@ $end
 0O"
 0P"
 0S"
-1n"
-1p"
+1r"
+1j"
 0:"
 0B"
 1C"
@@ -889,8 +889,8 @@ $end
 0^"
 0`"
 0c"
-0o"
-0p"
+0s"
+0j"
 0b"
 10"
 1:"
@@ -935,7 +935,7 @@ $end
 0H"
 1I"
 1_"
-0s"
+0m"
 0G"
 0C"
 1c"
@@ -990,7 +990,7 @@ $end
 0R"
 0U"
 1^"
-1p"
+1j"
 1:"
 0^"
 00"

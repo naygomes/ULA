@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ula
-Tue Jan 11 00:01:39 2022
+Tue Jan 11 00:41:57 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jan 11 00:01:39 2022       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jan 11 00:41:57 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; ula                                         ;
 ; Top-level Entity Name              ; ula                                         ;
@@ -171,8 +171,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -411,12 +410,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Jan 11 00:01:17 2022
+    Info: Processing started: Tue Jan 11 00:41:46 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ula -c ula
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
-    Info (12022): Found design unit 1: ula-functionUla File: C:/VHDL/ULA/ula.vhd Line: 29
+    Info (12022): Found design unit 1: ula-functionUla File: C:/VHDL/ULA/ula.vhd Line: 36
     Info (12023): Found entity 1: ula File: C:/VHDL/ULA/ula.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
     Info (12022): Found design unit 1: somador-functionSomador File: C:/VHDL/ULA/somador.vhd Line: 16
@@ -428,48 +427,48 @@ Info (12021): Found 2 design units, including 1 entities, in source file compara
     Info (12022): Found design unit 1: comparador-functionComparador File: C:/VHDL/ULA/comparador.vhd Line: 13
     Info (12023): Found entity 1: comparador File: C:/VHDL/ULA/comparador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
-    Info (12022): Found design unit 1: testBench-test File: C:/VHDL/ULA/testBench.vhd Line: 8
-    Info (12023): Found entity 1: testBench File: C:/VHDL/ULA/testBench.vhd Line: 5
+    Info (12022): Found design unit 1: testBench-teste File: C:/VHDL/ULA/testBench.vhd Line: 10
+    Info (12023): Found entity 1: testBench File: C:/VHDL/ULA/testBench.vhd Line: 7
 Info (12127): Elaborating entity "ula" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at ula.vhd(135): signal "selector" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 135
-Warning (10492): VHDL Process Statement warning at ula.vhd(136): signal "s_soma" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 136
-Warning (10492): VHDL Process Statement warning at ula.vhd(137): signal "carry_out0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 137
-Warning (10492): VHDL Process Statement warning at ula.vhd(139): signal "s_subtracao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 139
-Warning (10492): VHDL Process Statement warning at ula.vhd(140): signal "carry_out1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 140
-Warning (10492): VHDL Process Statement warning at ula.vhd(142): signal "s_incremento" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 142
-Warning (10492): VHDL Process Statement warning at ula.vhd(143): signal "carry_out2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 143
-Warning (10492): VHDL Process Statement warning at ula.vhd(145): signal "s_troca" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 145
-Warning (10492): VHDL Process Statement warning at ula.vhd(148): signal "s_complemento" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 148
-Warning (10492): VHDL Process Statement warning at ula.vhd(149): signal "carry_out3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 149
-Warning (10492): VHDL Process Statement warning at ula.vhd(151): signal "s_comparacao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 151
-Warning (10492): VHDL Process Statement warning at ula.vhd(154): signal "s_shift" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 154
-Warning (10492): VHDL Process Statement warning at ula.vhd(157): signal "s_rotacao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 157
-Warning (10631): VHDL Process Statement warning at ula.vhd(129): inferring latch(es) for signal or variable "carry_out", which holds its previous value in one or more paths through the process File: C:/VHDL/ULA/ula.vhd Line: 129
-Info (10041): Inferred latch for "carry_out" at ula.vhd(129) File: C:/VHDL/ULA/ula.vhd Line: 129
-Info (12128): Elaborating entity "somador" for hierarchy "somador:soma0" File: C:/VHDL/ULA/ula.vhd Line: 95
-Info (12128): Elaborating entity "complementoDe2" for hierarchy "complementoDe2:comp0" File: C:/VHDL/ULA/ula.vhd Line: 101
-Info (12128): Elaborating entity "comparador" for hierarchy "comparador:compara1" File: C:/VHDL/ULA/ula.vhd Line: 120
-Warning (13012): Latch carry_out has unsafe behavior File: C:/VHDL/ULA/ula.vhd Line: 129
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal selecao3 File: C:/VHDL/ULA/ula.vhd Line: 9
+Warning (10492): VHDL Process Statement warning at ula.vhd(142): signal "selector" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at ula.vhd(143): signal "s_soma" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 143
+Warning (10492): VHDL Process Statement warning at ula.vhd(144): signal "carry_out0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 144
+Warning (10492): VHDL Process Statement warning at ula.vhd(146): signal "s_subtracao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 146
+Warning (10492): VHDL Process Statement warning at ula.vhd(147): signal "carry_out1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at ula.vhd(149): signal "s_incremento" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 149
+Warning (10492): VHDL Process Statement warning at ula.vhd(150): signal "carry_out2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 150
+Warning (10492): VHDL Process Statement warning at ula.vhd(152): signal "s_troca" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at ula.vhd(155): signal "s_complemento" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 155
+Warning (10492): VHDL Process Statement warning at ula.vhd(156): signal "carry_out3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at ula.vhd(158): signal "s_comparacao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at ula.vhd(161): signal "s_shift" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at ula.vhd(164): signal "s_rotacao" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/VHDL/ULA/ula.vhd Line: 164
+Warning (10631): VHDL Process Statement warning at ula.vhd(136): inferring latch(es) for signal or variable "carry_out", which holds its previous value in one or more paths through the process File: C:/VHDL/ULA/ula.vhd Line: 136
+Info (10041): Inferred latch for "carry_out" at ula.vhd(136) File: C:/VHDL/ULA/ula.vhd Line: 136
+Info (12128): Elaborating entity "somador" for hierarchy "somador:soma0" File: C:/VHDL/ULA/ula.vhd Line: 102
+Info (12128): Elaborating entity "complementoDe2" for hierarchy "complementoDe2:comp0" File: C:/VHDL/ULA/ula.vhd Line: 108
+Info (12128): Elaborating entity "comparador" for hierarchy "comparador:compara1" File: C:/VHDL/ULA/ula.vhd Line: 127
+Warning (13012): Latch carry_out has unsafe behavior File: C:/VHDL/ULA/ula.vhd Line: 136
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal selecao3 File: C:/VHDL/ULA/ula.vhd Line: 10
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "seg7_num1_s[1]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 15
-    Warning (13410): Pin "seg7_num1_s[2]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 15
-    Warning (13410): Pin "seg7_num1_s[3]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 15
-    Warning (13410): Pin "seg7_num1_s[4]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 15
-    Warning (13410): Pin "seg7_num1_s[5]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 15
-    Warning (13410): Pin "seg7_num1_s[6]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 15
-    Warning (13410): Pin "seg7_num2_s[1]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 17
-    Warning (13410): Pin "seg7_num2_s[2]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 17
-    Warning (13410): Pin "seg7_num2_s[3]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 17
-    Warning (13410): Pin "seg7_num2_s[4]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 17
-    Warning (13410): Pin "seg7_num2_s[5]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 17
-    Warning (13410): Pin "seg7_num2_s[6]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 17
-    Warning (13410): Pin "seg7_s[1]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 19
-    Warning (13410): Pin "seg7_s[2]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 19
-    Warning (13410): Pin "seg7_s[3]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 19
-    Warning (13410): Pin "seg7_s[4]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 19
-    Warning (13410): Pin "seg7_s[5]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 19
-    Warning (13410): Pin "seg7_s[6]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 19
+    Warning (13410): Pin "seg7_num1_s[1]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 21
+    Warning (13410): Pin "seg7_num1_s[2]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 21
+    Warning (13410): Pin "seg7_num1_s[3]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 21
+    Warning (13410): Pin "seg7_num1_s[4]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 21
+    Warning (13410): Pin "seg7_num1_s[5]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 21
+    Warning (13410): Pin "seg7_num1_s[6]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 21
+    Warning (13410): Pin "seg7_num2_s[1]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 23
+    Warning (13410): Pin "seg7_num2_s[2]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 23
+    Warning (13410): Pin "seg7_num2_s[3]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 23
+    Warning (13410): Pin "seg7_num2_s[4]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 23
+    Warning (13410): Pin "seg7_num2_s[5]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 23
+    Warning (13410): Pin "seg7_num2_s[6]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 23
+    Warning (13410): Pin "seg7_s[1]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 25
+    Warning (13410): Pin "seg7_s[2]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 25
+    Warning (13410): Pin "seg7_s[3]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 25
+    Warning (13410): Pin "seg7_s[4]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 25
+    Warning (13410): Pin "seg7_s[5]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 25
+    Warning (13410): Pin "seg7_s[6]" is stuck at GND File: C:/VHDL/ULA/ula.vhd Line: 25
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -478,9 +477,9 @@ Info (21057): Implemented 130 device resources after synthesis - the final resou
     Info (21059): Implemented 50 output pins
     Info (21061): Implemented 69 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 4793 megabytes
-    Info: Processing ended: Tue Jan 11 00:01:39 2022
-    Info: Elapsed time: 00:00:22
+    Info: Peak virtual memory: 4784 megabytes
+    Info: Processing ended: Tue Jan 11 00:41:57 2022
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:24
 
 
