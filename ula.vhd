@@ -4,17 +4,24 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- Definindo entidade da ULA
 ENTITY ula IS
 PORT ( 
-selecao1		 : in std_logic;
-selecao2		 : in std_logic;
-selecao3		 : in std_logic;
-num1	  		 : in std_logic_vector(3 downto 0);
-num2	  		 : in std_logic_vector(3 downto 0);
-carry0  		 : in std_logic;
-saida	  		 : out std_logic_vector(3 downto 0);
-flag_carry	 : out std_logic;
-flag_zero	 : out std_logic;
-flag_overflow: out std_logic;
-flag_negativo: out std_logic
+selecao1		  : in std_logic;
+selecao2		  : in std_logic;
+selecao3		  : in std_logic;
+num1	  		  : in std_logic_vector(3 downto 0);
+num2	  		  : in std_logic_vector(3 downto 0);
+saida_bin  	  : out std_logic_vector(3 downto 0);
+
+seg7_num1     : out std_logic_vector(6 downto 0);
+seg7_num1_s	  : out std_logic_vector(6 downto 0);
+seg7_num2	  : out std_logic_vector(6 downto 0);
+seg7_num2_s	  : out std_logic_vector(6 downto 0);
+seg7_saida	  : out std_logic_vector(6 downto 0);
+seg7_s    	  : out std_logic_vector(6 downto 0);
+
+flag_carry	  : out std_logic;
+flag_zero	  : out std_logic;
+flag_overflow : out std_logic;
+flag_negativo : out std_logic
 );
 END ula;
 
@@ -85,20 +92,20 @@ signal s_rotacao: std_logic_vector(3 downto 0);
 BEGIN
 	
 	-- Somador de 4 bits
-	soma0: somador PORT MAP (num1(0), num2(0), carry0, s_soma(0), c0(1));
+	soma0: somador PORT MAP (num1(0), num2(0), '0', s_soma(0), c0(1));
 	soma1: somador PORT MAP (num1(1), num2(1), c0(1), s_soma(1), c0(2));
 	soma2: somador PORT MAP (num1(2), num2(2), c0(2), s_soma(2), c0(3));
 	soma3: somador PORT MAP (num1(3), num2(3), c0(3), s_soma(3), carry_out0);
 	
 	-- Subtração com complemento de 2
-	comp0: complementoDe2 PORT MAP (num2, carry0, complemento2, carry_intermed);
+	comp0: complementoDe2 PORT MAP (num2, '0', complemento2, carry_intermed);
 	sub0: somador PORT MAP (num1(0), complemento2(0), carry_intermed, s_subtracao(0), c1(1));
 	sub1: somador PORT MAP (num1(1), complemento2(1), c1(1), s_subtracao(1), c1(2));
 	sub2: somador PORT MAP (num1(2), complemento2(2), c1(2), s_subtracao(2), c1(3));
 	sub3: somador PORT MAP (num1(3), complemento2(3), c1(3), s_subtracao(3), carry_out1);
 	
 	-- Incremento de 1 da entrada num1
-	i0: somador PORT MAP (num1(0), '1', carry0, s_incremento(0), c2(1));
+	i0: somador PORT MAP (num1(0), '1', '0', s_incremento(0), c2(1));
 	i1: somador PORT MAP (num1(1), '0', c2(1), s_incremento(1), c2(2));
 	i2: somador PORT MAP (num1(2), '0', c2(2), s_incremento(2), c2(3));
 	i3: somador PORT MAP (num1(3), '0', c2(3), s_incremento(3), carry_out2);
@@ -107,7 +114,7 @@ BEGIN
 	s_troca <= NOT num1(3) & num1(2 downto 0);
 	
 	-- Complemento de 2 da entrada num1
-	comp1: complementoDe2 PORT MAP (num1, carry0, s_complemento, carry_out3);
+	comp1: complementoDe2 PORT MAP (num1, '0', s_complemento, carry_out3);
 		
 	-- Comparador
 	compara1: comparador PORT MAP ( num1, num2, s_comparacao(0));
@@ -168,6 +175,68 @@ BEGIN
 	flag_negativo <= '1' WHEN s(3) = '1' ELSE '0';
 	
 	-- Definindo saída
-	saida <= s;
+	saida_bin <= s;
+	
+	PROCESS (s, num1, num2)
+	BEGIN
+	
+		-- Display de 7 segmentos para a entrada num1
+		case num1(2 downto 0) is
+			  when "000"=> seg7_num1 <="1111110";  -- '0'
+			  when "001"=> seg7_num1 <="0110000";  -- '1'
+			  when "010"=> seg7_num1 <="1101101";  -- '2'
+			  when "011"=> seg7_num1 <="1111001";  -- '3'
+			  when "100"=> seg7_num1 <="0110011";  -- '4' 
+			  when "101"=> seg7_num1 <="1011011";  -- '5'
+			  when "110"=> seg7_num1 <="1011111";  -- '6'
+			  when "111"=> seg7_num1 <="1110000";  -- '7'  
+			  when others =>  NULL;
+		end case;
+
+		case num1(3) is
+			  when '0'=> seg7_num1_s <="0000000";  -- '+'
+			  when '1'=> seg7_num1_s <="0000001";  -- '-'
+			  when others =>  NULL;
+		end case;
+		
+		-- Display de 7 segmentos para a entrada num2
+		case num2(2 downto 0) is
+			  when "000"=> seg7_num2 <="1111110";  -- '0'
+			  when "001"=> seg7_num2 <="0110000";  -- '1'
+			  when "010"=> seg7_num2 <="1101101";  -- '2'
+			  when "011"=> seg7_num2 <="1111001";  -- '3'
+			  when "100"=> seg7_num2 <="0110011";  -- '4' 
+			  when "101"=> seg7_num2 <="1011011";  -- '5'
+			  when "110"=> seg7_num2 <="1011111";  -- '6'
+			  when "111"=> seg7_num2 <="1110000";  -- '7'  
+			  when others =>  NULL;
+		end case;
+
+		case num2(3) is
+			  when '0'=> seg7_num2_s <="0000000";  -- '+'
+			  when '1'=> seg7_num2_s <="0000001";  -- '-'
+			  when others =>  NULL;
+		end case;
+		
+		-- Display de 7 segmentos para a saída
+		case s(2 downto 0) is
+			  when "000"=> seg7_saida <="1111110";  -- '0'
+			  when "001"=> seg7_saida <="0110000";  -- '1'
+			  when "010"=> seg7_saida <="1101101";  -- '2'
+			  when "011"=> seg7_saida <="1111001";  -- '3'
+			  when "100"=> seg7_saida <="0110011";  -- '4' 
+			  when "101"=> seg7_saida <="1011011";  -- '5'
+			  when "110"=> seg7_saida <="1011111";  -- '6'
+			  when "111"=> seg7_saida <="1110000";  -- '7'  
+			  when others =>  NULL;
+		end case;
+
+		case s(3) is
+			  when '0'=> seg7_s <="0000000";  -- '+'
+			  when '1'=> seg7_s <="0000001";  -- '-'
+			  when others =>  NULL;
+		end case;
+		 
+	END PROCESS;
 		
 END functionUla;

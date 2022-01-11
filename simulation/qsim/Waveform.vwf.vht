@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "01/10/2022 13:28:08"
+-- Generated on "01/11/2022 00:04:54"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          ula
 -- 
@@ -34,27 +34,37 @@ END ula_vhd_vec_tst;
 ARCHITECTURE ula_arch OF ula_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL carry0 : STD_LOGIC;
 SIGNAL flag_carry : STD_LOGIC;
 SIGNAL flag_negativo : STD_LOGIC;
 SIGNAL flag_overflow : STD_LOGIC;
 SIGNAL flag_zero : STD_LOGIC;
 SIGNAL num1 : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL num2 : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL saida : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL saida_bin : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL seg7_num1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL seg7_num1_s : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL seg7_num2 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL seg7_num2_s : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL seg7_s : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL seg7_saida : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL selecao1 : STD_LOGIC;
 SIGNAL selecao2 : STD_LOGIC;
 SIGNAL selecao3 : STD_LOGIC;
 COMPONENT ula
 	PORT (
-	carry0 : IN STD_LOGIC;
 	flag_carry : OUT STD_LOGIC;
 	flag_negativo : OUT STD_LOGIC;
 	flag_overflow : OUT STD_LOGIC;
 	flag_zero : OUT STD_LOGIC;
 	num1 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 	num2 : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	saida : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	saida_bin : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	seg7_num1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	seg7_num1_s : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	seg7_num2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	seg7_num2_s : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	seg7_s : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	seg7_saida : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	selecao1 : IN STD_LOGIC;
 	selecao2 : IN STD_LOGIC;
 	selecao3 : IN STD_LOGIC
@@ -64,14 +74,19 @@ BEGIN
 	i1 : ula
 	PORT MAP (
 -- list connections between master ports and signals
-	carry0 => carry0,
 	flag_carry => flag_carry,
 	flag_negativo => flag_negativo,
 	flag_overflow => flag_overflow,
 	flag_zero => flag_zero,
 	num1 => num1,
 	num2 => num2,
-	saida => saida,
+	saida_bin => saida_bin,
+	seg7_num1 => seg7_num1,
+	seg7_num1_s => seg7_num1_s,
+	seg7_num2 => seg7_num2,
+	seg7_num2_s => seg7_num2_s,
+	seg7_s => seg7_s,
+	seg7_saida => seg7_saida,
 	selecao1 => selecao1,
 	selecao2 => selecao2,
 	selecao3 => selecao3
@@ -80,14 +95,14 @@ BEGIN
 -- selecao1
 t_prcs_selecao1: PROCESS
 BEGIN
-	selecao1 <= '0';
+	selecao1 <= '1';
 WAIT;
 END PROCESS t_prcs_selecao1;
 
 -- selecao2
 t_prcs_selecao2: PROCESS
 BEGIN
-	selecao2 <= '0';
+	selecao2 <= '1';
 WAIT;
 END PROCESS t_prcs_selecao2;
 
@@ -140,10 +155,8 @@ END PROCESS t_prcs_num1_0;
 -- num2[3]
 t_prcs_num2_3: PROCESS
 BEGIN
-	num2(3) <= '1';
-	WAIT FOR 60417 ps;
 	num2(3) <= '0';
-	WAIT FOR 116865 ps;
+	WAIT FOR 177282 ps;
 	num2(3) <= '1';
 	WAIT FOR 175518 ps;
 	num2(3) <= '0';
@@ -162,10 +175,8 @@ END PROCESS t_prcs_num2_2;
 -- num2[1]
 t_prcs_num2_1: PROCESS
 BEGIN
-	num2(1) <= '0';
-	WAIT FOR 60417 ps;
 	num2(1) <= '1';
-	WAIT FOR 219583 ps;
+	WAIT FOR 280000 ps;
 	num2(1) <= '0';
 	WAIT FOR 72800 ps;
 	num2(1) <= '1';
@@ -176,18 +187,13 @@ END PROCESS t_prcs_num2_1;
 -- num2[0]
 t_prcs_num2_0: PROCESS
 BEGIN
+	num2(0) <= '1';
+	WAIT FOR 60417 ps;
 	num2(0) <= '0';
-	WAIT FOR 352800 ps;
+	WAIT FOR 292383 ps;
 	num2(0) <= '1';
 	WAIT FOR 86877 ps;
 	num2(0) <= '0';
 WAIT;
 END PROCESS t_prcs_num2_0;
-
--- carry0
-t_prcs_carry0: PROCESS
-BEGIN
-	carry0 <= '0';
-WAIT;
-END PROCESS t_prcs_carry0;
 END ula_arch;

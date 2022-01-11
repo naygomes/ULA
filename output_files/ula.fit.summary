@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Jan 10 12:58:08 2022
+Fitter Status : Successful - Tue Jan 11 00:01:47 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : ula
 Top-level Entity Name : ula
 Family : Cyclone IV E
 Device : EP4CE6E22C6
 Timing Models : Final
-Total logic elements : 53 / 6,272 ( < 1 % )
-    Total combinational functions : 53 / 6,272 ( < 1 % )
+Total logic elements : 69 / 6,272 ( 1 % )
+    Total combinational functions : 69 / 6,272 ( 1 % )
     Dedicated logic registers : 0 / 6,272 ( 0 % )
 Total registers : 0
-Total pins : 20 / 92 ( 22 % )
+Total pins : 61 / 92 ( 66 % )
 Total virtual pins : 0
 Total memory bits : 0 / 276,480 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
